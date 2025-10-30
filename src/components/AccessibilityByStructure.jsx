@@ -8,13 +8,24 @@ const AccessibilityByStructure = () => {
   // Get unique features
   const features = [...new Set(structureData.map(d => d.feature))]
 
-  // Filter data by selected feature
+  // Define structure type order
+  const structureOrder = {
+    'Single-family detached': 0,
+    'Single-family attached': 1,
+    'Mobile home/other': 2,
+    '2-4 units': 3,
+    '5-49 units': 4,
+    '50+ units': 5
+  }
+
+  // Filter data by selected feature and sort by structure type
   const chartData = structureData
     .filter(d => d.feature === selectedFeature)
     .map(d => ({
       structure: d.structure_type,
       percent: Math.round(d.percent_with_feature * 10) / 10
     }))
+    .sort((a, b) => structureOrder[a.structure] - structureOrder[b.structure])
 
   return (
     <div className="chart-container">
