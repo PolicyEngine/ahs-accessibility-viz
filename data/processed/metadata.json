@@ -7,7 +7,9 @@
     "No-step entrance",
     "Wheelchair ramp",
     "Wide doorways/hallways",
-    "Accessible bathroom"
+    "Accessible bathroom",
+    "Bedroom on entry level",
+    "Bathroom on entry level"
   ],
   "note": "Percentages based on weighted estimates. Missing/not applicable responses excluded."
 }

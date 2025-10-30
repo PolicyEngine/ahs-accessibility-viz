@@ -62,6 +62,8 @@ ACCESSIBILITY_VARS = {
     'HARAMP': 'Wheelchair ramp',
     'MHWIDE': 'Wide doorways/hallways',
     'HMRACCESS': 'Accessible bathroom',
+    'HABEDENTRY': 'Bedroom on entry level',
+    'HABATHENTRY': 'Bathroom on entry level',
 }
 
 # Additional difficulty accessing features (reverse-coded)
@@ -147,6 +149,32 @@ def generate_summaries(df):
             # By structure
             structure_summary = calculate_feature_prevalence(df, 'structure_type', var_name, feature_name)
             summaries_by_structure.append(structure_summary)
+
+    # Add composite measure: Single-floor living (bedroom AND bathroom on entry level)
+    if 'HABEDENTRY' in df.columns and 'HABATHENTRY' in df.columns:
+        print("  - Single-floor living (bed + bath on entry)")
+        df_valid = df[df['HABEDENTRY'].isin(['1', '2']) & df['HABATHENTRY'].isin(['1', '2'])].copy()
+        df_valid['has_feature'] = ((df_valid['HABEDENTRY'] == '1') & (df_valid['HABATHENTRY'] == '1')).astype(int)
+
+        # By age
+        age_composite = df_valid.groupby('age_category').apply(
+            lambda x: pd.Series({
+                'percent_with_feature': 100 * (x['has_feature'] * x['WEIGHT']).sum() / x['WEIGHT'].sum(),
+                'total_units': x['WEIGHT'].sum()
+            })
+        ).reset_index()
+        age_composite['feature'] = 'Single-floor living (bed + bath on entry)'
+        summaries_by_age.append(age_composite)
+
+        # By structure
+        structure_composite = df_valid.groupby('structure_type').apply(
+            lambda x: pd.Series({
+                'percent_with_feature': 100 * (x['has_feature'] * x['WEIGHT']).sum() / x['WEIGHT'].sum(),
+                'total_units': x['WEIGHT'].sum()
+            })
+        ).reset_index()
+        structure_composite['feature'] = 'Single-floor living (bed + bath on entry)'
+        summaries_by_structure.append(structure_composite)
 
     # Combine all summaries
     by_age_df = pd.concat(summaries_by_age, ignore_index=True)

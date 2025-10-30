@@ -27,8 +27,13 @@ function App() {
       <section>
         <h2>Accessibility by Structure Type</h2>
         <p className="description">
-          Large multifamily buildings typically have more accessibility features than smaller structures,
-          partly due to Fair Housing Act requirements for buildings with 4+ units built after 1991.
+          Accessibility patterns vary by building type and feature. Large multifamily buildings often provide
+          single-floor living (bedroom and bathroom on entry level) due to elevators and single-level unit designs.
+          Single-family homes more commonly have wheelchair ramps, reflecting individual modifications.
+        </p>
+        <p className="description" style={{ fontSize: '0.9em', fontStyle: 'italic', background: '#fff9e6', padding: '0.5em', borderRadius: '4px' }}>
+          Note: This analyzes all housing units. HUD's 2019 report focused specifically on households with accessibility needs,
+          finding 73% of large apartments (10+ units) with accessibility needs had single-floor living vs. 61% of single-family homes.
         </p>
         <AccessibilityByStructure />
       </section>

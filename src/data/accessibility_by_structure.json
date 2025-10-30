@@ -142,5 +142,113 @@
     "percent_with_feature":7.6720329632,
     "total_units":268134.78273467,
     "feature":"Accessible bathroom"
+  },
+  {
+    "structure_type":"2-4 units",
+    "percent_with_feature":47.4265360323,
+    "total_units":7197162.5301989503,
+    "feature":"Bedroom on entry level"
+  },
+  {
+    "structure_type":"5-49 units",
+    "percent_with_feature":44.0757437468,
+    "total_units":13425005.6975197699,
+    "feature":"Bedroom on entry level"
+  },
+  {
+    "structure_type":"50+ units",
+    "percent_with_feature":49.6737027188,
+    "total_units":3319821.94636558,
+    "feature":"Bedroom on entry level"
+  },
+  {
+    "structure_type":"Mobile home\/other",
+    "percent_with_feature":54.0187755014,
+    "total_units":1625149.32471194,
+    "feature":"Bedroom on entry level"
+  },
+  {
+    "structure_type":"Single-family attached",
+    "percent_with_feature":54.8238466136,
+    "total_units":939247.8842201302,
+    "feature":"Bedroom on entry level"
+  },
+  {
+    "structure_type":"Single-family detached",
+    "percent_with_feature":49.3850150701,
+    "total_units":362564.35113565,
+    "feature":"Bedroom on entry level"
+  },
+  {
+    "structure_type":"2-4 units",
+    "percent_with_feature":58.4207345902,
+    "total_units":7200517.6565742502,
+    "feature":"Bathroom on entry level"
+  },
+  {
+    "structure_type":"5-49 units",
+    "percent_with_feature":56.3947945065,
+    "total_units":13405389.5237757992,
+    "feature":"Bathroom on entry level"
+  },
+  {
+    "structure_type":"50+ units",
+    "percent_with_feature":63.3669818686,
+    "total_units":3323822.0699894801,
+    "feature":"Bathroom on entry level"
+  },
+  {
+    "structure_type":"Mobile home\/other",
+    "percent_with_feature":68.2003758658,
+    "total_units":1625149.32471194,
+    "feature":"Bathroom on entry level"
+  },
+  {
+    "structure_type":"Single-family attached",
+    "percent_with_feature":60.1545990555,
+    "total_units":941288.86671293,
+    "feature":"Bathroom on entry level"
+  },
+  {
+    "structure_type":"Single-family detached",
+    "percent_with_feature":58.9576560849,
+    "total_units":362564.35113565,
+    "feature":"Bathroom on entry level"
+  },
+  {
+    "structure_type":"2-4 units",
+    "percent_with_feature":45.1389627319,
+    "total_units":7197162.5301989503,
+    "feature":"Single-floor living (bed + bath on entry)"
+  },
+  {
+    "structure_type":"5-49 units",
+    "percent_with_feature":41.1798469299,
+    "total_units":13403872.9957261998,
+    "feature":"Single-floor living (bed + bath on entry)"
+  },
+  {
+    "structure_type":"50+ units",
+    "percent_with_feature":47.6463842539,
+    "total_units":3319821.94636558,
+    "feature":"Single-floor living (bed + bath on entry)"
+  },
+  {
+    "structure_type":"Mobile home\/other",
+    "percent_with_feature":52.3982855344,
+    "total_units":1625149.32471194,
+    "feature":"Single-floor living (bed + bath on entry)"
+  },
+  {
+    "structure_type":"Single-family attached",
+    "percent_with_feature":52.6831957964,
+    "total_units":939247.8842201302,
+    "feature":"Single-floor living (bed + bath on entry)"
+  },
+  {
+    "structure_type":"Single-family detached",
+    "percent_with_feature":47.6429256692,
+    "total_units":362564.35113565,
+    "feature":"Single-floor living (bed + bath on entry)"
   }
 ]

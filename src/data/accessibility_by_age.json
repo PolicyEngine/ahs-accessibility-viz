@@ -118,5 +118,95 @@
     "percent_with_feature":5.1648112387,
     "total_units":10410219.4469646197,
     "feature":"Accessible bathroom"
+  },
+  {
+    "age_category":"1960-1979",
+    "percent_with_feature":48.5330365718,
+    "total_units":5738776.9944108296,
+    "feature":"Bedroom on entry level"
+  },
+  {
+    "age_category":"1980-1999",
+    "percent_with_feature":41.7284554392,
+    "total_units":6697903.2325354693,
+    "feature":"Bedroom on entry level"
+  },
+  {
+    "age_category":"2000-2009",
+    "percent_with_feature":47.6923219716,
+    "total_units":4285099.0786320604,
+    "feature":"Bedroom on entry level"
+  },
+  {
+    "age_category":"2010 or later",
+    "percent_with_feature":48.5814574201,
+    "total_units":2009670.3546848611,
+    "feature":"Bedroom on entry level"
+  },
+  {
+    "age_category":"Before 1960",
+    "percent_with_feature":48.5574047454,
+    "total_units":8137502.0738887992,
+    "feature":"Bedroom on entry level"
+  },
+  {
+    "age_category":"1960-1979",
+    "percent_with_feature":59.5010629198,
+    "total_units":5736169.7890598299,
+    "feature":"Bathroom on entry level"
+  },
+  {
+    "age_category":"1980-1999",
+    "percent_with_feature":52.222388072,
+    "total_units":6688169.5390322208,
+    "feature":"Bathroom on entry level"
+  },
+  {
+    "age_category":"2000-2009",
+    "percent_with_feature":57.8469430869,
+    "total_units":4285683.7323206104,
+    "feature":"Bathroom on entry level"
+  },
+  {
+    "age_category":"2010 or later",
+    "percent_with_feature":61.3748406455,
+    "total_units":2009670.3546848611,
+    "feature":"Bathroom on entry level"
+  },
+  {
+    "age_category":"Before 1960",
+    "percent_with_feature":63.1857936323,
+    "total_units":8139038.3778025284,
+    "feature":"Bathroom on entry level"
+  },
+  {
+    "age_category":"1960-1979",
+    "percent_with_feature":45.8328616345,
+    "total_units":5733095.6429924294,
+    "feature":"Single-floor living (bed + bath on entry)"
+  },
+  {
+    "age_category":"1980-1999",
+    "percent_with_feature":38.8921877981,
+    "total_units":6687580.3208618704,
+    "feature":"Single-floor living (bed + bath on entry)"
+  },
+  {
+    "age_category":"2000-2009",
+    "percent_with_feature":45.1244402495,
+    "total_units":4280756.2988174595,
+    "feature":"Single-floor living (bed + bath on entry)"
+  },
+  {
+    "age_category":"2010 or later",
+    "percent_with_feature":46.9292594091,
+    "total_units":2009670.3546848611,
+    "feature":"Single-floor living (bed + bath on entry)"
+  },
+  {
+    "age_category":"Before 1960",
+    "percent_with_feature":46.2831374481,
+    "total_units":8136716.4150018292,
+    "feature":"Single-floor living (bed + bath on entry)"
   }
 ]
