@@ -1,152 +1,122 @@
 [
   {
-    "age_category":"Before 1960",
-    "feature":"No-step entrance",
-    "percent_with_feature":73.8038644417,
-    "total_units":7626921
-  },
-  {
-    "age_category":"Before 1960",
-    "feature":"Single-floor living",
-    "percent_with_feature":59.0282728967,
-    "total_units":15328735
-  },
-  {
-    "age_category":"Before 1960",
-    "feature":"Wide doorways\/hallways",
-    "percent_with_feature":30.3981503981,
-    "total_units":19484412
-  },
-  {
-    "age_category":"Before 1960",
-    "feature":"Accessible bathroom",
-    "percent_with_feature":75.849360659,
-    "total_units":8398857
-  },
-  {
-    "age_category":"Before 1960",
-    "feature":"Accessible kitchen",
-    "percent_with_feature":28.4987855838,
-    "total_units":5903298
-  },
-  {
     "age_category":"1960-1979",
-    "feature":"No-step entrance",
-    "percent_with_feature":24.6506866353,
-    "total_units":12287443
-  },
-  {
-    "age_category":"1960-1979",
-    "feature":"Single-floor living",
-    "percent_with_feature":64.0876441462,
-    "total_units":14925471
-  },
-  {
-    "age_category":"1960-1979",
-    "feature":"Wide doorways\/hallways",
-    "percent_with_feature":46.1028983058,
-    "total_units":7010466
-  },
-  {
-    "age_category":"1960-1979",
-    "feature":"Accessible bathroom",
-    "percent_with_feature":56.6065799756,
-    "total_units":11106932
-  },
-  {
-    "age_category":"1960-1979",
-    "feature":"Accessible kitchen",
-    "percent_with_feature":56.7362486142,
-    "total_units":7342010
+    "percent_with_feature":55.7325062965,
+    "total_units":31900491.6240301728,
+    "feature":"No-step entrance"
   },
   {
     "age_category":"1980-1999",
-    "feature":"No-step entrance",
-    "percent_with_feature":68.7179804946,
-    "total_units":5514105
+    "percent_with_feature":56.1579372064,
+    "total_units":33659683.0919769704,
+    "feature":"No-step entrance"
+  },
+  {
+    "age_category":"2000-2009",
+    "percent_with_feature":62.3887018802,
+    "total_units":18156463.9297878444,
+    "feature":"No-step entrance"
+  },
+  {
+    "age_category":"2010 or later",
+    "percent_with_feature":63.0887445118,
+    "total_units":9303236.647737354,
+    "feature":"No-step entrance"
+  },
+  {
+    "age_category":"Before 1960",
+    "percent_with_feature":41.1986803974,
+    "total_units":33309294.9613155983,
+    "feature":"No-step entrance"
+  },
+  {
+    "age_category":"1960-1979",
+    "percent_with_feature":5.1358577396,
+    "total_units":13978374.3241662048,
+    "feature":"Wheelchair ramp"
   },
   {
     "age_category":"1980-1999",
-    "feature":"Single-floor living",
-    "percent_with_feature":44.2068363662,
-    "total_units":11276598
+    "percent_with_feature":4.9398946573,
+    "total_units":14578605.4568707161,
+    "feature":"Wheelchair ramp"
+  },
+  {
+    "age_category":"2000-2009",
+    "percent_with_feature":4.5870056166,
+    "total_units":8071233.1451349426,
+    "feature":"Wheelchair ramp"
+  },
+  {
+    "age_category":"2010 or later",
+    "percent_with_feature":6.1929630997,
+    "total_units":4072384.8495479571,
+    "feature":"Wheelchair ramp"
+  },
+  {
+    "age_category":"Before 1960",
+    "percent_with_feature":4.4237095788,
+    "total_units":14564397.7120642774,
+    "feature":"Wheelchair ramp"
+  },
+  {
+    "age_category":"1960-1979",
+    "percent_with_feature":72.3974952008,
+    "total_units":1929761.6910658539,
+    "feature":"Wide doorways\/hallways"
   },
   {
     "age_category":"1980-1999",
-    "feature":"Wide doorways\/hallways",
-    "percent_with_feature":59.9484211333,
-    "total_units":19713005
+    "percent_with_feature":56.0740174349,
+    "total_units":3626989.1255503199,
+    "feature":"Wide doorways\/hallways"
+  },
+  {
+    "age_category":"2000-2009",
+    "percent_with_feature":39.4038064127,
+    "total_units":1174283.81962245,
+    "feature":"Wide doorways\/hallways"
+  },
+  {
+    "age_category":"2010 or later",
+    "percent_with_feature":54.328640746,
+    "total_units":518091.67883618,
+    "feature":"Wide doorways\/hallways"
+  },
+  {
+    "age_category":"Before 1960",
+    "percent_with_feature":83.3868825063,
+    "total_units":150202.68113887,
+    "feature":"Wide doorways\/hallways"
+  },
+  {
+    "age_category":"1960-1979",
+    "percent_with_feature":6.3073816975,
+    "total_units":10351422.242394764,
+    "feature":"Accessible bathroom"
   },
   {
     "age_category":"1980-1999",
-    "feature":"Accessible bathroom",
-    "percent_with_feature":62.5888682928,
-    "total_units":14282642
-  },
-  {
-    "age_category":"1980-1999",
-    "feature":"Accessible kitchen",
-    "percent_with_feature":78.0531147331,
-    "total_units":12081379
+    "percent_with_feature":4.6577325039,
+    "total_units":12455595.4270863906,
+    "feature":"Accessible bathroom"
   },
   {
     "age_category":"2000-2009",
-    "feature":"No-step entrance",
-    "percent_with_feature":23.3452007968,
-    "total_units":10569476
-  },
-  {
-    "age_category":"2000-2009",
-    "feature":"Single-floor living",
-    "percent_with_feature":29.637163396,
-    "total_units":18658436
-  },
-  {
-    "age_category":"2000-2009",
-    "feature":"Wide doorways\/hallways",
-    "percent_with_feature":72.6632645063,
-    "total_units":11488109
-  },
-  {
-    "age_category":"2000-2009",
-    "feature":"Accessible bathroom",
-    "percent_with_feature":32.20285514,
-    "total_units":18699320
-  },
-  {
-    "age_category":"2000-2009",
-    "feature":"Accessible kitchen",
-    "percent_with_feature":60.918462815,
-    "total_units":10846795
+    "percent_with_feature":3.2714483825,
+    "total_units":6428566.8224875499,
+    "feature":"Accessible bathroom"
   },
   {
     "age_category":"2010 or later",
-    "feature":"No-step entrance",
-    "percent_with_feature":79.3606390143,
-    "total_units":19275571
+    "percent_with_feature":6.1803689644,
+    "total_units":2514556.7809677003,
+    "feature":"Accessible bathroom"
   },
   {
-    "age_category":"2010 or later",
-    "feature":"Single-floor living",
-    "percent_with_feature":32.1573532686,
-    "total_units":16119678
-  },
-  {
-    "age_category":"2010 or later",
-    "feature":"Wide doorways\/hallways",
-    "percent_with_feature":53.9272853346,
-    "total_units":7506535
-  },
-  {
-    "age_category":"2010 or later",
-    "feature":"Accessible bathroom",
-    "percent_with_feature":20.2358821044,
-    "total_units":10901292
-  },
-  {
-    "age_category":"2010 or later",
-    "feature":"Accessible kitchen",
-    "percent_with_feature":69.0982117776,
-    "total_units":7190008
+    "age_category":"Before 1960",
+    "percent_with_feature":5.1648112387,
+    "total_units":10410219.4469646197,
+    "feature":"Accessible bathroom"
   }
 ]

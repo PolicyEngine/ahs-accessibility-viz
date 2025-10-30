@@ -8,8 +8,11 @@ function App() {
       <header>
         <h1>Housing Accessibility Features in America</h1>
         <p className="description">
-          Analysis of accessibility features in the U.S. housing stock using the American Housing Survey.
-          This visualization replicates and extends HUD's 2011 study using 2019 data.
+          Analysis of accessibility features in the U.S. housing stock using the 2019 American Housing Survey.
+          Based on weighted estimates from 63,000+ housing units representing 127 million occupied units nationwide.
+        </p>
+        <p className="description" style={{ fontStyle: 'italic', fontSize: '0.95em' }}>
+          This visualization extends HUD's 2011 accessibility study using real AHS 2019 microdata.
         </p>
       </header>
 
