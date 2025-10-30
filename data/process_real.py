@@ -78,10 +78,17 @@ def load_and_process_data():
     """Load AHS data and process accessibility features."""
     print("Loading AHS 2019 microdata...")
 
+    # Variables to identify households with accessibility needs (per HUD 2019 report):
+    # - Mobility device users (CANE = uses cane, crutches, wheelchair, walker)
+    # - Difficulty accessing home/rooms (HAGETHOME, HAGETKIT, HAGETBATH, HAGETBED)
+    # - Mobility disabilities (HHWALK = difficulty walking/climbing stairs)
+    accessibility_needs_vars = ['CANE', 'HAGETHOME', 'HAGETKIT', 'HAGETBATH', 'HAGETBED', 'HHWALK']
+
     # Load only needed columns
     columns_needed = ['WEIGHT', 'YRBUILT', 'UNITSIZE'] + \
                      list(ACCESSIBILITY_VARS.keys()) + \
-                     list(DIFFICULTY_VARS.keys())
+                     list(DIFFICULTY_VARS.keys()) + \
+                     accessibility_needs_vars
 
     df = pd.read_csv('ahs2019n.csv', usecols=columns_needed, dtype=str)
 
@@ -100,6 +107,19 @@ def load_and_process_data():
     df['age_category'] = df['YRBUILT'].apply(categorize_age)
     df['structure_type'] = df['UNITSIZE'].map(UNITSIZE_BROAD)
 
+    # Identify households with accessibility needs
+    # Per HUD 2019 report: households with mobility device users, difficulty accessing,
+    # or mobility-related disabilities (value = '1' means Yes)
+    needs_indicators = []
+    for var in accessibility_needs_vars:
+        if var in df.columns:
+            needs_indicators.append(df[var] == '1')
+
+    if needs_indicators:
+        df['has_accessibility_needs'] = pd.concat(needs_indicators, axis=1).any(axis=1)
+    else:
+        df['has_accessibility_needs'] = False
+
     # Filter to valid cases
     df = df[df['WEIGHT'] > 0].copy()
     df = df[df['age_category'].notna()].copy()
@@ -108,10 +128,28 @@ def load_and_process_data():
     print(f"After filtering: {len(df):,} housing units")
     print(f"Total weighted units: {df['WEIGHT'].sum()/1e6:.1f}M")
 
+    # Report on accessibility needs
+    needs_count = df[df['has_accessibility_needs']]['WEIGHT'].sum()
+    total_count = df['WEIGHT'].sum()
+    print(f"Units with accessibility needs: {needs_count/1e6:.1f}M ({100*needs_count/total_count:.1f}%)")
+
     return df
 
-def calculate_feature_prevalence(df, group_var, feature_var, feature_name):
-    """Calculate weighted prevalence of a feature by group."""
+def calculate_feature_prevalence(df, group_var, feature_var, feature_name, needs_filter='all'):
+    """Calculate weighted prevalence of a feature by group.
+
+    Args:
+        df: DataFrame with housing data
+        group_var: Variable to group by (age_category or structure_type)
+        feature_var: Accessibility feature variable
+        feature_name: Display name for the feature
+        needs_filter: 'all', 'with_needs', or 'without_needs'
+    """
+    # Filter by accessibility needs if requested
+    if needs_filter == 'with_needs':
+        df = df[df['has_accessibility_needs']].copy()
+    elif needs_filter == 'without_needs':
+        df = df[~df['has_accessibility_needs']].copy()
 
     # Consider feature present if value is '1' (Yes)
     # Missing values (-6, -9, NaN) are treated as unknown/NA
@@ -127,6 +165,7 @@ def calculate_feature_prevalence(df, group_var, feature_var, feature_name):
     ).reset_index()
 
     grouped['feature'] = feature_name
+    grouped['needs_filter'] = needs_filter
 
     return grouped
 
@@ -138,43 +177,57 @@ def generate_summaries(df):
 
     print("\nCalculating accessibility feature prevalence...")
 
-    for var_name, feature_name in ACCESSIBILITY_VARS.items():
-        if var_name in df.columns:
-            print(f"  - {feature_name}")
+    # Generate summaries for all households AND for households with accessibility needs
+    for needs_filter in ['all', 'with_needs']:
+        print(f"\n  Processing: {needs_filter}")
+
+        for var_name, feature_name in ACCESSIBILITY_VARS.items():
+            if var_name in df.columns:
+                print(f"    - {feature_name}")
+
+                # By age
+                age_summary = calculate_feature_prevalence(df, 'age_category', var_name, feature_name, needs_filter)
+                summaries_by_age.append(age_summary)
+
+                # By structure
+                structure_summary = calculate_feature_prevalence(df, 'structure_type', var_name, feature_name, needs_filter)
+                summaries_by_structure.append(structure_summary)
+
+        # Add composite measure: Single-floor living (bedroom AND bathroom on entry level)
+        if 'HABEDENTRY' in df.columns and 'HABATHENTRY' in df.columns:
+            print("    - Single-floor living (bed + bath on entry)")
+
+            # Filter by needs
+            df_filtered = df.copy()
+            if needs_filter == 'with_needs':
+                df_filtered = df_filtered[df_filtered['has_accessibility_needs']].copy()
+            elif needs_filter == 'without_needs':
+                df_filtered = df_filtered[~df_filtered['has_accessibility_needs']].copy()
+
+            df_valid = df_filtered[df_filtered['HABEDENTRY'].isin(['1', '2']) & df_filtered['HABATHENTRY'].isin(['1', '2'])].copy()
+            df_valid['has_feature'] = ((df_valid['HABEDENTRY'] == '1') & (df_valid['HABATHENTRY'] == '1')).astype(int)
 
             # By age
-            age_summary = calculate_feature_prevalence(df, 'age_category', var_name, feature_name)
-            summaries_by_age.append(age_summary)
+            age_composite = df_valid.groupby('age_category').apply(
+                lambda x: pd.Series({
+                    'percent_with_feature': 100 * (x['has_feature'] * x['WEIGHT']).sum() / x['WEIGHT'].sum(),
+                    'total_units': x['WEIGHT'].sum()
+                })
+            ).reset_index()
+            age_composite['feature'] = 'Single-floor living (bed + bath on entry)'
+            age_composite['needs_filter'] = needs_filter
+            summaries_by_age.append(age_composite)
 
             # By structure
-            structure_summary = calculate_feature_prevalence(df, 'structure_type', var_name, feature_name)
-            summaries_by_structure.append(structure_summary)
-
-    # Add composite measure: Single-floor living (bedroom AND bathroom on entry level)
-    if 'HABEDENTRY' in df.columns and 'HABATHENTRY' in df.columns:
-        print("  - Single-floor living (bed + bath on entry)")
-        df_valid = df[df['HABEDENTRY'].isin(['1', '2']) & df['HABATHENTRY'].isin(['1', '2'])].copy()
-        df_valid['has_feature'] = ((df_valid['HABEDENTRY'] == '1') & (df_valid['HABATHENTRY'] == '1')).astype(int)
-
-        # By age
-        age_composite = df_valid.groupby('age_category').apply(
-            lambda x: pd.Series({
-                'percent_with_feature': 100 * (x['has_feature'] * x['WEIGHT']).sum() / x['WEIGHT'].sum(),
-                'total_units': x['WEIGHT'].sum()
-            })
-        ).reset_index()
-        age_composite['feature'] = 'Single-floor living (bed + bath on entry)'
-        summaries_by_age.append(age_composite)
-
-        # By structure
-        structure_composite = df_valid.groupby('structure_type').apply(
-            lambda x: pd.Series({
-                'percent_with_feature': 100 * (x['has_feature'] * x['WEIGHT']).sum() / x['WEIGHT'].sum(),
-                'total_units': x['WEIGHT'].sum()
-            })
-        ).reset_index()
-        structure_composite['feature'] = 'Single-floor living (bed + bath on entry)'
-        summaries_by_structure.append(structure_composite)
+            structure_composite = df_valid.groupby('structure_type').apply(
+                lambda x: pd.Series({
+                    'percent_with_feature': 100 * (x['has_feature'] * x['WEIGHT']).sum() / x['WEIGHT'].sum(),
+                    'total_units': x['WEIGHT'].sum()
+                })
+            ).reset_index()
+            structure_composite['feature'] = 'Single-floor living (bed + bath on entry)'
+            structure_composite['needs_filter'] = needs_filter
+            summaries_by_structure.append(structure_composite)
 
     # Combine all summaries
     by_age_df = pd.concat(summaries_by_age, ignore_index=True)

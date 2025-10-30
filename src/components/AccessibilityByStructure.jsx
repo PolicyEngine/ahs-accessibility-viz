@@ -4,6 +4,7 @@ import structureData from '../data/accessibility_by_structure.json'
 
 const AccessibilityByStructure = () => {
   const [selectedFeature, setSelectedFeature] = useState('No-step entrance')
+  const [showOnlyNeeds, setShowOnlyNeeds] = useState(false)
 
   // Get unique features
   const features = [...new Set(structureData.map(d => d.feature))]
@@ -18,9 +19,10 @@ const AccessibilityByStructure = () => {
     '50+ units': 5
   }
 
-  // Filter data by selected feature and sort by structure type
+  // Filter data by selected feature, needs filter, and sort by structure type
+  const needsFilter = showOnlyNeeds ? 'with_needs' : 'all'
   const chartData = structureData
-    .filter(d => d.feature === selectedFeature)
+    .filter(d => d.feature === selectedFeature && d.needs_filter === needsFilter)
     .map(d => ({
       structure: d.structure_type,
       percent: Math.round(d.percent_with_feature * 10) / 10
@@ -40,6 +42,15 @@ const AccessibilityByStructure = () => {
             <option key={feature} value={feature}>{feature}</option>
           ))}
         </select>
+
+        <label style={{ marginLeft: '2em' }}>
+          <input
+            type="checkbox"
+            checked={showOnlyNeeds}
+            onChange={(e) => setShowOnlyNeeds(e.target.checked)}
+          />
+          {' '}Only households with accessibility needs
+        </label>
       </div>
 
       <ResponsiveContainer width="100%" height={400}>
