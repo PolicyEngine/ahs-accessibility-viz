@@ -1,0 +1,87 @@
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 2.5em;
+  line-height: 1.1;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 1.8em;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+
+.description {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 2em;
+}
+
+.chart-container {
+  margin: 2em 0;
+  padding: 1em;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.controls {
+  margin: 2em 0;
+  padding: 1em;
+  background: #f0f0f0;
+  border-radius: 8px;
+}
+
+.controls label {
+  margin-right: 1em;
+}
+
+.controls select {
+  padding: 0.5em;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #1a1a1a;
+  }
+
+  .chart-container {
+    background: #2a2a2a;
+  }
+
+  .controls {
+    background: #2a2a2a;
+  }
+
+  .description {
+    color: #aaa;
+  }
+}

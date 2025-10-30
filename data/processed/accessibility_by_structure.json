@@ -1,0 +1,122 @@
+[
+  {
+    "structure_type":"Single-family detached",
+    "feature":"No-step entrance",
+    "percent_with_feature":51.0767368971,
+    "total_units":16123359
+  },
+  {
+    "structure_type":"Single-family detached",
+    "feature":"Single-floor living",
+    "percent_with_feature":57.6891599434,
+    "total_units":25316116
+  },
+  {
+    "structure_type":"Single-family detached",
+    "feature":"Wide doorways\/hallways",
+    "percent_with_feature":24.2667535819,
+    "total_units":9765373
+  },
+  {
+    "structure_type":"Single-family detached",
+    "feature":"Accessible bathroom",
+    "percent_with_feature":48.2281948252,
+    "total_units":11257312
+  },
+  {
+    "structure_type":"Single-family detached",
+    "feature":"Accessible kitchen",
+    "percent_with_feature":73.9445187953,
+    "total_units":5536039
+  },
+  {
+    "structure_type":"2-4 units",
+    "feature":"No-step entrance",
+    "percent_with_feature":71.7538632087,
+    "total_units":10149766
+  },
+  {
+    "structure_type":"2-4 units",
+    "feature":"Single-floor living",
+    "percent_with_feature":56.235839163,
+    "total_units":20151135
+  },
+  {
+    "structure_type":"2-4 units",
+    "feature":"Wide doorways\/hallways",
+    "percent_with_feature":53.2934089271,
+    "total_units":17446840
+  },
+  {
+    "structure_type":"2-4 units",
+    "feature":"Accessible bathroom",
+    "percent_with_feature":43.9610057663,
+    "total_units":5141958
+  },
+  {
+    "structure_type":"2-4 units",
+    "feature":"Accessible kitchen",
+    "percent_with_feature":45.6669511905,
+    "total_units":10137694
+  },
+  {
+    "structure_type":"5-49 units",
+    "feature":"No-step entrance",
+    "percent_with_feature":78.1031931925,
+    "total_units":27561422
+  },
+  {
+    "structure_type":"5-49 units",
+    "feature":"Single-floor living",
+    "percent_with_feature":34.3477315286,
+    "total_units":20877268
+  },
+  {
+    "structure_type":"5-49 units",
+    "feature":"Wide doorways\/hallways",
+    "percent_with_feature":45.9085310507,
+    "total_units":28061435
+  },
+  {
+    "structure_type":"5-49 units",
+    "feature":"Accessible bathroom",
+    "percent_with_feature":45.7676026187,
+    "total_units":29955782
+  },
+  {
+    "structure_type":"5-49 units",
+    "feature":"Accessible kitchen",
+    "percent_with_feature":69.0649347768,
+    "total_units":14974656
+  },
+  {
+    "structure_type":"50+ units",
+    "feature":"No-step entrance",
+    "percent_with_feature":29.3625684587,
+    "total_units":27761383
+  },
+  {
+    "structure_type":"50+ units",
+    "feature":"Single-floor living",
+    "percent_with_feature":62.0668602071,
+    "total_units":19908837
+  },
+  {
+    "structure_type":"50+ units",
+    "feature":"Wide doorways\/hallways",
+    "percent_with_feature":72.8250858732,
+    "total_units":11035867
+  },
+  {
+    "structure_type":"50+ units",
+    "feature":"Accessible bathroom",
+    "percent_with_feature":51.0189303535,
+    "total_units":27997360
+  },
+  {
+    "structure_type":"50+ units",
+    "feature":"Accessible kitchen",
+    "percent_with_feature":46.423966817,
+    "total_units":27926054
+  }
+]
