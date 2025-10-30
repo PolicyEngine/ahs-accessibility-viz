@@ -8,13 +8,23 @@ const AccessibilityByAge = () => {
   // Get unique features
   const features = [...new Set(ageData.map(d => d.feature))]
 
-  // Filter data by selected feature
+  // Define age category order
+  const ageOrder = {
+    'Before 1960': 0,
+    '1960-1979': 1,
+    '1980-1999': 2,
+    '2000-2009': 3,
+    '2010 or later': 4
+  }
+
+  // Filter data by selected feature and sort by age
   const chartData = ageData
     .filter(d => d.feature === selectedFeature)
     .map(d => ({
       age: d.age_category,
       percent: Math.round(d.percent_with_feature * 10) / 10
     }))
+    .sort((a, b) => ageOrder[a.age] - ageOrder[b.age])
 
   return (
     <div className="chart-container">
