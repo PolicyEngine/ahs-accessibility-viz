@@ -1,10 +1,11 @@
-import { useState } from 'react'
+'use client';
+
 import AccessibilityByAge from './components/AccessibilityByAge'
 import AccessibilityByStructure from './components/AccessibilityByStructure'
 
 function App() {
   return (
-    <div className="App">
+    <div className="app-root">
       <header>
         <h1>Housing Accessibility Features in America</h1>
         <p className="description">
@@ -12,7 +13,7 @@ function App() {
           Based on weighted estimates from 63,000+ housing units representing 127 million occupied units nationwide.
         </p>
         <p className="description" style={{ fontStyle: 'italic', fontSize: '0.95em' }}>
-          This visualization extends HUD's 2011 accessibility study using real AHS 2019 microdata.
+          This visualization extends HUD&apos;s 2011 accessibility study using real AHS 2019 microdata.
         </p>
       </header>
 
@@ -32,7 +33,7 @@ function App() {
           Single-family homes more commonly have wheelchair ramps, reflecting individual modifications.
         </p>
         <p className="description" style={{ fontSize: '0.9em', fontStyle: 'italic', background: '#fff9e6', padding: '0.5em', borderRadius: '4px' }}>
-          Note: This analyzes all housing units. HUD's 2019 report focused specifically on households with accessibility needs,
+          Note: This analyzes all housing units. HUD&apos;s 2019 report focused specifically on households with accessibility needs,
           finding 73% of large apartments (10+ units) with accessibility needs had single-floor living vs. 61% of single-family homes.
         </p>
         <AccessibilityByStructure />
@@ -44,7 +45,7 @@ function App() {
           Analysis by PolicyEngine.
           <br />
           Original HUD study: <a href="https://www.huduser.gov/portal/sites/default/files/pdf/accessibility-america-housingStock.pdf" target="_blank" rel="noopener noreferrer">
-            Accessibility of America's Housing Stock (2011)
+            Accessibility of America&apos;s Housing Stock (2011)
           </a>
         </p>
       </footer>
