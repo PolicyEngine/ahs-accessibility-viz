@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
 import structureData from '../data/accessibility_by_structure.json'

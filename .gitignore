@@ -2,8 +2,12 @@
 node_modules/
 
 # Build outputs
+.next/
+out/
 dist/
 build/
+next-env.d.ts
+*.tsbuildinfo
 
 # Logs
 *.log
@@ -37,3 +41,5 @@ data/*.csv
 # Environment
 .env
 .env.local
+.env*.local
+.vercel
